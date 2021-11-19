@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的乐谱</title>
+</head>
+
+<body>
+    <div class="toolbar">
+        <button onclick="saveActivedocToCfg()">收录当前文件</button>
+        <button onclick="refreshList()">刷新</button>
+    </div>
+    <table class="Mu_list">
+        <thead>
+            <th>歌曲列表</th>
+            <th style="width: 39px;">选择</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td name="小星星" furl="文件路径">小星星</td>
+                <td>
+                    <button class="buttonS btn_open">打开</button>
+                    <button class="buttonS btn_delete">删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<style>
+    body {
+        /* position: fixed; */
+        margin: 10px 15px;
+        width: 250px;
+        font-size: 14px;
+        background-color: rgb(245, 247, 249);
+    }
+
+    button {
+        background-color: #e7e7e7d8;
+        color: black;
+        border: 2px;
+        border-color: rgb(177, 177, 177);
+        border-style: solid;
+        border-radius: 5px;
+        padding: 4px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #cacacad8;
+        border-color: rgb(161, 161, 161);
+    }
+
+    /**小**/
+    .buttonS {
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 2px 5px;
+        border-color: rgb(199, 199, 199);
+        margin: 0 2px;
+    }
+
+    .toolbar {
+        margin-bottom: 6px;
+        width: 250px;
+    }
+
+    .Mu_list td {
+        font-size: 12px;
+        border: 1px solid #dbdbdb;
+    }
+
+    .Mu_list th {
+        font-size: 13px;
+    }
+
+    table {
+        width: 250px;
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #bebebe;
+    }
+
+    table td,
+    table th {
+        border: 1px solid #bebebe;
+        color: #363636;
+        height: 30px;
+    }
+
+    table thead th {
+        background-color: #eeeeee;
+        width: 100px;
+    }
+
+    table tbody td span {
+        margin: 10 10px;
+        text-align: left;
+    }
+
+    table tr:nth-child(odd) {
+        background: #fff;
+    }
+
+    table tr:nth-child(even) {
+        background: #fcfcfc;
+    }
+</style>
+
+<script src="../js/jquery/jquery-3.5.1.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/ui/myMusic.js"></script>
+
+</html>

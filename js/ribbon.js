@@ -1,84 +1,122 @@
-
-//这个函数在整个wps加载项中是第一个执行的
-function OnAddinLoad(ribbonUI){
-    if (typeof (wps.ribbonUI) != "object"){
-		wps.ribbonUI = ribbonUI
+function OnAddinLoad(ribbonUI) {
+    if (typeof (wps.ribbonUI) != "object") {
+        wps.ribbonUI = ribbonUI
     }
-    
+
     if (typeof (wps.Enum) != "object") { // 如果没有内置枚举值
         wps.Enum = WPS_Enum
     }
 
-    wps.PluginStorage.setItem("EnableFlag", false) //往PluginStorage中设置一个标记，用于控制两个按钮的置灰
-    wps.PluginStorage.setItem("ApiEventFlag", false) //往PluginStorage中设置一个标记，用于控制ApiEvent的按钮label
+    MSE.setValue("PlayStatus", 0);
+    wps.WpsApplication().FileDialog(2).Filters.Add("MuScore 乐谱文件", "*.muscr");   //添加文件类型
+
+    //初始化监听事件
+    AddDocumentEvent();
     return true
 }
 
-var WebNotifycount = 0;
 function OnAction(control) {
     const eleId = control.Id
+    if (!MSE.piano) {
+        createPianoPane();
+    }
     switch (eleId) {
-        case "btnShowMsg":
+        case "btn_newMuScore":
             {
-                const doc = wps.WpsApplication().ActiveDocument
-                if (!doc) {
-                    alert("当前没有打开任何文档")
-                    return
-                }
-                alert(doc.Name)
+                MSE.newMuScore();
             }
             break;
-        case "btnIsEnbable":
+        case "btn_importMuScore":
             {
-                let bFlag = wps.PluginStorage.getItem("EnableFlag")
-                wps.PluginStorage.setItem("EnableFlag", !bFlag)
-                
-                //通知wps刷新以下几个按饰的状态
-                wps.ribbonUI.InvalidateControl("btnIsEnbable")
-                wps.ribbonUI.InvalidateControl("btnShowDialog") 
-                wps.ribbonUI.InvalidateControl("btnShowTaskPane") 
-                //wps.ribbonUI.Invalidate(); 这行代码打开则是刷新所有的按钮状态
-                break
+                MSE.selectMusicScore();
             }
-        case "btnShowDialog":
-            wps.ShowDialog(GetUrlPath() + "/ui/dialog.html", "这是一个对话框网页", 400 * window.devicePixelRatio, 400 * window.devicePixelRatio, false)
-            break
-        case "btnShowTaskPane":
+            break;
+        case "btn_exportMuScore":
             {
-                let tsId = wps.PluginStorage.getItem("taskpane_id")
-                if (!tsId) {
-                    let tskpane = wps.CreateTaskPane(GetUrlPath() + "/ui/taskpane.html")
-                    let id = tskpane.ID
-                    wps.PluginStorage.setItem("taskpane_id", id)
-                    tskpane.Visible = true
+                MSE.outputMusicScore();
+            }
+            break;
+        case "btn_transToPDF":
+            {
+                MSE.transToPDF();
+            }
+            break;
+        case "btn_transToOFD":
+            {
+                MSE.transToOFD();
+            }
+            break;
+        case "btn_myMuScore":
+            {
+                MSE.showMyMusicPane();
+            }
+            break;
+        case "btn_openMidiFile":
+            {
+                MSE.selectMidiFile();
+            }
+            break;
+        case "btn_play":
+            {
+                if (MSE.midiUrl) {
+                    MSE.setValue("PlayStatus", MSE.midiUrl ? 1 : 0);
+                    wps.ribbonUI.Invalidate();
+                    MSE.sendPianoCommand("play");
+                    console.log("play Mid Start");
+                } else if (MSE.checkIsMuscr()) {
+                    MSE.setValue("PlayStatus", 1);
+                    wps.ribbonUI.Invalidate();
+                    MSE.playMuscr("playMuscr");
+                    console.log("play Muscr Start");
                 } else {
-                    let tskpane = wps.GetTaskPane(tsId)
-                    tskpane.Visible = !tskpane.Visible
+                    //没选择文件,无法开始播放
+                    wps.alert("未选择mid文件，或当前文件不是乐谱文件，无法播放");
                 }
             }
-            break
-        case "btnApiEvent":
+            break;
+        case "btn_pause":
             {
-                let bFlag = wps.PluginStorage.getItem("ApiEventFlag")
-                let bRegister = bFlag ? false : true
-                wps.PluginStorage.setItem("ApiEventFlag", bRegister)
-                if (bRegister){
-                    wps.ApiEvent.AddApiEventListener('DocumentNew', OnNewDocumentApiEvent)
-                }
-                else{
-                    wps.ApiEvent.RemoveApiEventListener('DocumentNew', OnNewDocumentApiEvent)
-                }
-
-                wps.ribbonUI.InvalidateControl("btnApiEvent") 
+                MSE.setValue("PlayStatus", 2);
+                wps.ribbonUI.Invalidate();
+                MSE.sendPianoCommand("pause");
             }
-            break
-        case "btnWebNotify":
+            break;
+        case "btn_stop":
             {
-                let currentTime = new Date()
-                let timeStr = currentTime.getHours() + ':' + currentTime.getMinutes() + ":" + currentTime.getSeconds()
-                wps.OAAssist.WebNotify("这行内容由wps加载项主动送达给业务系统，可以任意自定义, 比如时间值:" + timeStr + "，次数：" + (++WebNotifycount), true)
+                MSE.setValue("PlayStatus", 0);
+                wps.ribbonUI.Invalidate();
+                MSE.sendPianoCommand("stop");
             }
-            break
+            break;
+        case "btn_MuSetting":
+            {
+                wps.ShowDialog(common.getFullURL("ui/MuHeaderSetting.html?type=reset"), "简谱设置", 455, 208);
+            }
+            break;
+        case "btn_pageSet":
+            {
+                wps.ShowDialog(common.getFullURL("ui/pageSetting.html"), "页面设置", 459, 315);
+            }
+            break;
+        case "btn_code":
+            {
+                if (MSE.Editor)
+                    MSE.sendEditorCommand("close");
+                MSE.Editor = wps.ShowDialog(common.getFullURL("js/MSE/codeEdit/codeEditor.html"), "脚本编辑", 888, 288, false);
+            }
+            break;
+        case "btn_piano":
+            {
+                if (MSE.piano) {
+                    MSE.piano.Visible = MSE.piano.Visible ? false : true;
+                }
+            }
+            break;
+        case "btn_pianoToKeybord":
+            {
+                wps.ShowDialog(common.getFullURL("ui/pianoHelp.html"), "keyBord对照表 中央C：Q", 1000, 355, false);
+            }
+            break;
         default:
             break
     }
@@ -88,65 +126,120 @@ function OnAction(control) {
 function GetImage(control) {
     const eleId = control.Id
     switch (eleId) {
-        case "btnShowMsg":
-            return "images/1.svg"
-        case "btnShowDialog":
-            return "images/2.svg"
-        case "btnShowTaskPane":
-            return "images/3.svg"
+        case "btn_newMuScore":
+            return "images/icons/file-empty.svg"
+        case "btn_importMuScore":
+            return "images/icons/folder-import.svg"
+        case "btn_exportMuScore":
+            return "images/icons/folder-export.svg"
+        case "btn_transToPDF":
+            return "images/icons/file-pdf.svg"
+        case "btn_transToOFD":
+            return "images/icons/file-ofd.svg"
+        case "btn_myMuScore":
+            return "images/icons/myMuScore.svg"
+        case "btn_openMidiFile":
+            return "images/icons/folder-open.svg"
+        case "btn_play":
+            return "images/icons/play.svg"
+        case "btn_pause":
+            return "images/icons/pause.svg"
+        case "btn_stop":
+            return "images/icons/stop.svg"
+        case "btn_MuSetting":
+            return "images/icons/music.svg"
+        case "btn_pageSet":
+            return "images/icons/page-setting.svg"
+        case "btn_code":
+            return "images/icons/coding.svg"
+        case "btn_piano":
+            return "images/icons/piano.svg"
+        case "btn_pianoToKeybord":
+            return "images/icons/help.svg"
+        case "btn_aboutUs":
+            return "images/icons/about.svg"
         default:
-            ;
+            break
     }
-    return "images/newFromTemp.svg"
+    return ""
 }
 
 function OnGetEnabled(control) {
     const eleId = control.Id
     switch (eleId) {
-        case "btnShowMsg":
+        case "btn_importMuScore":
+            return getPlayBtnStatus(eleId);
+        case "btn_openMidiFile":
+            return getPlayBtnStatus(eleId);
+        case "btn_play":
+            return getPlayBtnStatus(eleId);
+        case "btn_pause":
+            return getPlayBtnStatus(eleId);
+        case "btn_stop":
+            return getPlayBtnStatus(eleId);
+        case "btn_pianoToKeybord":
             return true
-            break
-        case "btnShowDialog":
-            {
-                let bFlag = wps.PluginStorage.getItem("EnableFlag")
-                return bFlag
-                break
-            }
-        case "btnShowTaskPane":
-            {
-                let bFlag = wps.PluginStorage.getItem("EnableFlag")
-                return bFlag
-                break
-            }
         default:
             break
     }
     return true
 }
 
-function OnGetVisible(control){
-    return true
-}
-
-function OnGetLabel(control){
+function OnGetVisible(control) {
     const eleId = control.Id
     switch (eleId) {
-        case "btnIsEnbable":
-        {
-            let bFlag = wps.PluginStorage.getItem("EnableFlag")
-            return bFlag ?  "按钮Disable" : "按钮Enable"
-            break
-        }
-        case "btnApiEvent":
-        {
-            let bFlag = wps.PluginStorage.getItem("ApiEventFlag")
-            return bFlag ? "清除新建文件事件" : "注册新建文件事件"
-            break
-        }    
+        case "btn_openMidiFile":
+            return false
+        default:
+            return true
+    }
+}
+
+function OnGetLabel(control) {
+    const eleId = control.Id
+    switch (eleId) {
+        case "ttt":
+            {
+                let bFlag = wps.PluginStorage.getItem("EnableFlag")
+                return bFlag ? "按钮Disable" : "按钮Enable"
+                break
+            }
     }
     return ""
 }
 
-function OnNewDocumentApiEvent(doc){
-    alert("新建文件事件响应，取文件名: " + doc.Name)
+
+
+function getPlayBtnStatus(btnName) {
+    var PlayStatus = MSE.getValue("PlayStatus");
+    switch (PlayStatus) {
+        case 0: //停止状态可点击的
+            return "btn_importMuScore|btn_openMidiFile|btn_play|".includes(btnName)
+        case 1: //播放状态可点击的
+            return "btn_pause|btn_stop|".includes(btnName)
+        case 2: //暂停状态可点击的
+            return "btn_play|btn_stop|".includes(btnName)
+    }
+}
+
+//初始化taskPane for piano
+function createPianoPane() {
+    if (!wps.GetTaskPane(1) || (wps.GetTaskPane(1).ID == -1)) {
+        MSE.piano = wps.CreateTaskPane(common.getFullURL("js/piano/index.html"), "Piano Player");
+        // MSE.piano = wps.CreateTaskPane("http://192.168.0.27:8080/", "Piano Player");
+        // MSE.piano.Visible = true;
+        MSE.piano.DockPosition = 3
+        if (common.detectOS() == "Linux") {
+            MSE.piano.Height = 248
+        }
+    } else {
+        //兼容Linux 原先已经有一个taskpane
+        MSE.piano = wps.GetTaskPane(1);
+        // MSE.piano.Visible = true;
+        MSE.piano.DockPosition = 3
+        if (common.detectOS() == "Linux") {
+            MSE.piano.Height = 248
+        }
+    }
+    return MSE.piano;
 }

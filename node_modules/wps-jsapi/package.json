@@ -1,0 +1,24 @@
+{
+  "name": "wps-jsapi",
+  "types": "./index.d.ts",
+  "version": "1.0.5",
+  "description": "wps加载项的jsapi对象模型的TypeScript描述",
+  "main": "./index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "wps",
+    "wps加载项",
+    "wps-jsapi"
+  ],
+  "author": {
+    "name": "zouyf",
+    "email": "156411203@qq.com"
+  },
+  "license": "ISC"
+}

@@ -1,9 +1,25 @@
 {
-	"name": "musicEdit",
+	"name": "music-editor",
 	"addonType": "wps",
-	"version": "1.0.0",
-	"description": "wps加载项示例, 执行npm install后，提供代码联想功能",
+	"version": "1.0.1",
+	"description": "musicEdit - WPS Music Score Editor",
+	"keywords": [
+		"music"
+	],
+	"main": "serve.js",
+	"scripts": {
+		"test": "wpsjs debug",
+		"build": "wpsjs build",
+		"publish": "wpsjs publish",
+		"serve": "node serve.js"
+	},
+	"author": "lzx",
 	"devDependencies": {
-		"wps-jsapi": "latest"
+		"wps-jsapi": "^1.0.5",
+		"live-server": "^1.2.1"
+	},
+	"devinfo": {
+		"publishUrl_7z": "http://127.0.0.1/wps-addon-build/",
+		"publishUrl_online": "http://127.0.0.1/"
 	}
 }

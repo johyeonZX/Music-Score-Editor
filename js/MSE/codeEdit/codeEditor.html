@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>codeEditor</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <script src="../../jquery/jquery-3.5.1.min.js"></script>
+    <script src="codeEditor.js"></script>
+    <script src="../../common.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #333;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="editor_text" class="editor_common editor_text" spellcheck="false" onblur="editdorOnblur();"
+        onClick="editdorClick();" onscroll="setScroll();" onkeydown="return editdorKeydown();"
+        onkeyup="editdorKeyup();"></textarea>
+    <div id="editor_div" class="editor_common editor_div"
+        onclick="alert('很抱歉，您当前使用的浏览器暂不支持脚本加亮。\n脚本加亮功能将自动关闭。');$(this).hide();"></div>
+</body>
+
+</html>

@@ -1,15 +1,36 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
     <ribbon startFromScratch="false">
         <tabs>
-            <tab id="wpsAddinTab" label="wps加载项示例">
-				<group id="btnDemoGroup" label="group1">
-                    <button id="btnShowMsg" label="弹出消息框" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
-                    <button id="btnIsEnbable" getLabel="OnGetLabel" onAction="OnAction" enabled="true"  getImage="GetImage" visible="true" size="large"/>
-                    <button id="btnShowDialog" label="弹对话框网页" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" getVisible="OnGetVisible" size="large"/>
-                    <button id="btnShowTaskPane" label="弹任务窗格网页" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" getVisible="OnGetVisible" size="large"/>
-                    <button id="btnApiEvent" getLabel="OnGetLabel" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" getVisible="OnGetVisible" size="large"/>
-                    <button id="btnWebNotify" label="给业务系统发通知" onAction="OnAction" enabled="true"  getImage="GetImage" getVisible="OnGetVisible" size="large"/>
+            <tab id="musicEditTab" label="乐谱编辑器">
+				<group id="FileMngGroup" label="FileMngGroup">
+                    <button id="btn_newMuScore" label="新建乐谱" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_myMuScore" label="我的乐谱" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
 				</group>
+				<group id="FileIOGroup" label="FileIOGroup">
+                    <button id="btn_importMuScore" label="导入乐谱" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_exportMuScore" label="导出乐谱" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_transToPDF" label="导出为PDF" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_transToOFD" label="导出为OFD" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_openMidiFile" label="从Mid加载乐谱" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" getVisible="OnGetVisible" size="large"/>
+				</group>
+				<group id="musicPlayCtlGroup" label="musicPlayCtlGroup">
+                    <button id="btn_play" label="开始" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_pause" label="暂停" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_stop" label="停止" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+				</group>
+				<group id="ToolsGroup" label="ToolsGroup">
+                    <button id="btn_MuSetting" label="简谱设置" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_pageSet" label="页面设置" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <!-- <button id="btn_lock" label="排板" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/> -->
+                    <button id="btn_code" label="脚本编辑" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                    <button id="btn_piano" label="钢琴模拟" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+				</group>
+				<group id="help" label="help">
+                    <box boxStyle="vertical">
+                        <button id="btn_pianoToKeybord" label="钢琴键盘映射表" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/>
+                        <!-- <button id="btn_aboutUs" label="关于" onAction="OnAction" getEnabled="OnGetEnabled"  getImage="GetImage" visible="true" size="large"/> -->
+                    </box>
+                </group>
             </tab>
         </tabs>
     </ribbon>

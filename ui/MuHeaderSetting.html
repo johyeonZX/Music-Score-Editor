@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>头信息设置</title>
+</head>
+
+<body>
+    <div id="Setting">
+        <div id="infos" style="width:400px; height: 110px;">
+            <span style="width: 190px" class="title">
+                <fieldset>
+                    <div>
+                        <span>主标题:</span>
+                        <span><input id="B1" type="text" value="new Song"></span>
+                    </div>
+                    <div>
+                        <span>副标题:</span>
+                        <span><input id="B2" type="text" value=""></span>
+                    </div>
+                    <!-- <div>
+                        <span>作词者:</span>
+                        <span><input id="Z1" type="text" value=""></span>
+                    </div> -->
+                    <div>
+                        <span>作曲者:</span>
+                        <span><input id="Z2" type="text" value=""></span>
+                    </div>
+                </fieldset>
+            </span>
+            <span style="width: 200px">
+                <fieldset id="DPSet">
+                    <div>
+                        <span>调式:</span>
+                        <select id="D">
+                            <option value="C">C</option>
+                            <!-- <option value="D">D</option>
+                            <option value="E">E</option> -->
+                        </select>
+                    </div>
+                    <div>
+                        <span>拍号:</span>
+                        <select id="Pn" onchange="">
+                            <!--分子-->
+                            <!-- <option value="2">2</option> -->
+                            <!-- <option value="3">3</option> -->
+                            <option value="4" selected>4</option>
+                            <!-- <option value="6">6</option> -->
+                        </select>
+                        <a style="float: initial;">/</a>
+                        <select id="Pd" onchange="">
+                            <!--分母-->
+                            <option value="4" selected>4</option>
+                            <!-- <option value="8">8</option> -->
+                        </select>
+                    </div>
+                    <div>
+                        <span>节拍:</span>
+                        <input id="J" type="text" value="120">
+                    </div>
+                    <div id="TrackSetting">
+                        <span>音轨:</span>
+                        <select id="TrackNum">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </span>
+        </div>
+        <div id="buttons" style="width:400px" align="center">
+            <button onclick="resetMuHeader()">确 认</button>
+            <button onclick="closePage()">取 消</button>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        font-size: 12px;
+        margin: 10px 30px;
+    }
+
+    input {
+        width: 90px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    select {
+        margin: 0 5px;
+        font-size: 12px;
+        min-width: 35px;
+    }
+
+    span {
+        float: left;
+        margin-right: 5px;
+    }
+
+    button {
+        margin-top: 12px;
+        width: 85px;
+        height: 27px;
+        margin-right: 10px;
+    }
+
+    fieldset {
+        height: 123px;
+    }
+
+    #Setting {
+        width: 400px;
+    }
+
+    #DPSet span {
+        width: 30px;
+        margin-left: 7px;
+    }
+
+    #DPSet div {
+        padding: 7px 5px 4px 5px;
+    }
+
+    .title span {
+        float: initial;
+    }
+
+    .title div {
+        padding: 7px 5px 4px 5px;
+    }
+
+    #J {
+        width: 88px;
+        margin-left: 5px;
+    }
+
+    #D,
+    #TrackNum {
+        width: 93px;
+    }
+</style>
+
+<script src="../js/jquery/jquery-3.5.1.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/libs/Fraction.js"></script>
+<script src="../js/MSE/SongClass/song.js"></script>
+<script src="../js/MSE/SongClass/songHeader.js"></script>
+<script src="../js/MSE/SongClass/track.js"></script>
+<script src="../js/MSE/SongClass/section.js"></script>
+<script src="../js/MSE/SongClass/note.js"></script>
+<script src="../js/ui/MuHeaderSetting.js"></script>
+
+</html>

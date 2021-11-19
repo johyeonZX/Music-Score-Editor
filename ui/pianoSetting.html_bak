@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="pc-kbd-ct">
+        <div class="pc-kbd-row">
+            <div name="192" class="">
+                <div class="key-name">
+                    ~
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="49" class="">
+                <div class="key-name">
+                    1
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="50" class="">
+                <div class="key-name">
+                    2
+                </div>
+                <div class="key-rep">
+                    ♩ = #c1
+                </div>
+            </div>
+            <div name="51" class="">
+                <div class="key-name">
+                    3
+                </div>
+                <div class="key-rep">
+                    ♩ = #d1
+                </div>
+            </div>
+            <div name="52" class="">
+                <div class="key-name">
+                    4
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="53" class="">
+                <div class="key-name">
+                    5
+                </div>
+                <div class="key-rep">
+                    ♩ = #f1
+                </div>
+            </div>
+            <div name="54" class="">
+                <div class="key-name">
+                    6
+                </div>
+                <div class="key-rep">
+                    ♩ = #g1
+                </div>
+            </div>
+            <div name="55" class="">
+                <div class="key-name">
+                    7
+                </div>
+                <div class="key-rep">
+                    ♩ = #a1
+                </div>
+            </div>
+            <div name="56" class="">
+                <div class="key-name">
+                    8
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="57" class="">
+                <div class="key-name">
+                    9
+                </div>
+                <div class="key-rep">
+                    ♩ = #c2
+                </div>
+            </div>
+            <div name="48" class="">
+                <div class="key-name">
+                    0
+                </div>
+                <div class="key-rep">
+                    ♩ = #d2
+                </div>
+            </div>
+            <div name="189" class="">
+                <div class="key-name">
+                    -
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="187" class="">
+                <div class="key-name">
+                    =
+                </div>
+                <div class="key-rep">
+                    ♩ = #f2
+                </div>
+            </div>
+            <div name="8" class="" style="width: 90px;">
+                <div class="key-name">
+                    Backspace
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="45" disable="true" class="disable" style="margin-left: 20px;">
+                <div class="key-name">
+                    Insert
+                </div>
+                <!---->
+            </div>
+            <div name="36" disable="true" class="disable">
+                <div class="key-name">
+                    Home
+                </div>
+                <!---->
+            </div>
+            <div name="33" disable="true" class="disable">
+                <div class="key-name">
+                    PgU
+                </div>
+                <!---->
+            </div>
+            <div name="144" disable="true" class="disable" style="margin-left: 20px;">
+                <div class="key-name">
+                    Num
+                </div>
+                <!---->
+            </div>
+            <div name="111" class="">
+                <div class="key-name">
+                    /
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="106" class="">
+                <div class="key-name">
+                    *
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="109" class="">
+                <div class="key-name">
+                    -
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+        </div>
+        <div class="pc-kbd-row">
+            <div name="9" disable="true" class="disable" style="width: 72px;">
+                <div class="key-name">
+                    Tab
+                </div>
+                <!---->
+            </div>
+            <div name="81" class="">
+                <div class="key-name">
+                    Q
+                </div>
+                <div class="key-rep">
+                    ♩ = c1
+                </div>
+            </div>
+            <div name="87" class="">
+                <div class="key-name">
+                    W
+                </div>
+                <div class="key-rep">
+                    ♩ = d1
+                </div>
+            </div>
+            <div name="69" class="">
+                <div class="key-name">
+                    E
+                </div>
+                <div class="key-rep">
+                    ♩ = e1
+                </div>
+            </div>
+            <div name="82" class="">
+                <div class="key-name">
+                    R
+                </div>
+                <div class="key-rep">
+                    ♩ = f1
+                </div>
+            </div>
+            <div name="84" class="">
+                <div class="key-name">
+                    T
+                </div>
+                <div class="key-rep">
+                    ♩ = g1
+                </div>
+            </div>
+            <div name="89" class="">
+                <div class="key-name">
+                    Y
+                </div>
+                <div class="key-rep">
+                    ♩ = a1
+                </div>
+            </div>
+            <div name="85" class="">
+                <div class="key-name">
+                    U
+                </div>
+                <div class="key-rep">
+                    ♩ = b1
+                </div>
+            </div>
+            <div name="73" class="">
+                <div class="key-name">
+                    I
+                </div>
+                <div class="key-rep">
+                    ♩ = c2
+                </div>
+            </div>
+            <div name="79" class="">
+                <div class="key-name">
+                    O
+                </div>
+                <div class="key-rep">
+                    ♩ = d2
+                </div>
+            </div>
+            <div name="80" class="">
+                <div class="key-name">
+                    P
+                </div>
+                <div class="key-rep">
+                    ♩ = e2
+                </div>
+            </div>
+            <div name="219" class="">
+                <div class="key-name">
+                    {
+                </div>
+                <div class="key-rep">
+                    ♩ = f2
+                </div>
+            </div>
+            <div name="221" class="">
+                <div class="key-name">
+                    }
+                </div>
+                <div class="key-rep">
+                    ♩ = g2
+                </div>
+            </div>
+            <div name="220" class="" style="width: 68px;">
+                <div class="key-name">
+                    \
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="46" disable="true" class="disable" style="margin-left: 20px;">
+                <div class="key-name">
+                    Del
+                </div>
+                <!---->
+            </div>
+            <div name="35" disable="true" class="disable">
+                <div class="key-name">
+                    End
+                </div>
+                <!---->
+            </div>
+            <div name="34" disable="true" class="disable">
+                <div class="key-name">
+                    PgD
+                </div>
+                <!---->
+            </div>
+            <div name="103" class="" style="margin-left: 20px;">
+                <div class="key-name">
+                    7
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="104" class="">
+                <div class="key-name">
+                    8
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="105" class="">
+                <div class="key-name">
+                    9
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="107" class="" style="height: 107px;">
+                <div class="key-name">
+                    +
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+        </div>
+        <div class="pc-kbd-row">
+            <div name="20" disable="true" class="disable" style="width: 96px;">
+                <div class="key-name">
+                    Caps Lock
+                </div>
+                <!---->
+            </div>
+            <div name="65" class="">
+                <div class="key-name">
+                    A
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="83" class="">
+                <div class="key-name">
+                    S
+                </div>
+                <div class="key-rep">
+                    ♩ = #c
+                </div>
+            </div>
+            <div name="68" class="">
+                <div class="key-name">
+                    D
+                </div>
+                <div class="key-rep">
+                    ♩ = #d
+                </div>
+            </div>
+            <div name="70" class="">
+                <div class="key-name">
+                    F
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="71" class="">
+                <div class="key-name">
+                    G
+                </div>
+                <div class="key-rep">
+                    ♩ = #f
+                </div>
+            </div>
+            <div name="72" class="">
+                <div class="key-name">
+                    H
+                </div>
+                <div class="key-rep">
+                    ♩ = #g
+                </div>
+            </div>
+            <div name="74" class="">
+                <div class="key-name">
+                    J
+                </div>
+                <div class="key-rep">
+                    ♩ = #a
+                </div>
+            </div>
+            <div name="75" class="">
+                <div class="key-name">
+                    K
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="76" class="">
+                <div class="key-name">
+                    L
+                </div>
+                <div class="key-rep">
+                    ♩ = #c1
+                </div>
+            </div>
+            <div name="186" class="">
+                <div class="key-name">
+                    ;
+                </div>
+                <div class="key-rep">
+                    ♩ = #d1
+                </div>
+            </div>
+            <div name="222" class="">
+                <div class="key-name">
+                    "
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="13" disable="true" class="disable" style="width: 105px;">
+                <div class="key-name">
+                    Enter
+                </div>
+                <!---->
+            </div>
+            <div name="100" class="" style="margin-left: 224px;">
+                <div class="key-name">
+                    4
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="101" class="">
+                <div class="key-name">
+                    5
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="102" class="">
+                <div class="key-name">
+                    6
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+        </div>
+        <div class="pc-kbd-row">
+            <div name="16" disable="true" class="disable" style="width: 120px;">
+                <div class="key-name">
+                    Shift
+                </div>
+                <!---->
+            </div>
+            <div name="90" class="">
+                <div class="key-name">
+                    Z
+                </div>
+                <div class="key-rep">
+                    ♩ = c
+                </div>
+            </div>
+            <div name="88" class="">
+                <div class="key-name">
+                    X
+                </div>
+                <div class="key-rep">
+                    ♩ = d
+                </div>
+            </div>
+            <div name="67" class="">
+                <div class="key-name">
+                    C
+                </div>
+                <div class="key-rep">
+                    ♩ = e
+                </div>
+            </div>
+            <div name="86" class="">
+                <div class="key-name">
+                    V
+                </div>
+                <div class="key-rep">
+                    ♩ = f
+                </div>
+            </div>
+            <div name="66" class="">
+                <div class="key-name">
+                    B
+                </div>
+                <div class="key-rep">
+                    ♩ = g
+                </div>
+            </div>
+            <div name="78" class="">
+                <div class="key-name">
+                    N
+                </div>
+                <div class="key-rep">
+                    ♩ = a
+                </div>
+            </div>
+            <div name="77" class="">
+                <div class="key-name">
+                    M
+                </div>
+                <div class="key-rep">
+                    ♩ = b
+                </div>
+            </div>
+            <div name="188" class="">
+                <div class="key-name">
+                    &lt;
+                </div>
+                <div class="key-rep">
+                    ♩ = c1
+                </div>
+            </div>
+            <div name="190" class="">
+                <div class="key-name">
+                    &gt;
+                </div>
+                <div class="key-rep">
+                    ♩ = d1
+                </div>
+            </div>
+            <div name="191" class="">
+                <div class="key-name">
+                    ?
+                </div>
+                <div class="key-rep">
+                    ♩ = e1
+                </div>
+            </div>
+            <div name="16" disable="true" class="disable" style="width: 142px;">
+                <div class="key-name">
+                    Shift
+                </div>
+                <!---->
+            </div>
+            <div name="38" class="" style="margin-left: 81.2px;">
+                <div class="key-name">
+                    ↑
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="97" class="" style="margin-left: 82px;">
+                <div class="key-name">
+                    1
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="98" class="">
+                <div class="key-name">
+                    2
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="99" class="">
+                <div class="key-name">
+                    3
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="13" disable="true" class="disable" style="height: 107px;">
+                <div class="key-name">
+                    Enter
+                </div>
+                <!---->
+            </div>
+        </div>
+        <div class="pc-kbd-row">
+            <div name="17" disable="true" class="disable" style="width: 63px;">
+                <div class="key-name">
+                    Ctrl
+                </div>
+                <!---->
+            </div>
+            <div name="91" disable="true" class="disable" style="width: 63px;">
+                <div class="key-name">
+                    Win
+                </div>
+                <!---->
+            </div>
+            <div name="18" disable="true" class="disable" style="width: 63px;">
+                <div class="key-name">
+                    Alt
+                </div>
+                <!---->
+            </div>
+            <div name="32" class="" style="width: 440px;">
+                <div class="key-name">
+                    Space
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="18" disable="true" class="disable" style="width: 63px;">
+                <div class="key-name">
+                    Alt
+                </div>
+                <!---->
+            </div>
+            <div name="93" disable="true" class="disable" style="width: 63px;">
+                <div class="key-name">
+                    Opt
+                </div>
+                <!---->
+            </div>
+            <div name="17" disable="true" class="disable" style="width: 63px;">
+                <div class="key-name">
+                    Ctrl
+                </div>
+                <!---->
+            </div>
+            <div name="37" class="" style="margin-left: 20px;">
+                <div class="key-name">
+                    ←
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="40" class="">
+                <div class="key-name">
+                    ↓
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="39" class="">
+                <div class="key-name">
+                    →
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="96" class="" style="width: 111px; margin-left: 20px;">
+                <div class="key-name">
+                    0
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+            <div name="110" class="">
+                <div class="key-name">
+                    .
+                </div>
+                <div class="key-rep">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .pc-kbd-ct {
+        padding: 30px 5px 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 1272px;
+        margin: 0 auto
+    }
+
+    .pc-kbd-ct>.pc-kbd-row {
+        display: block;
+        white-space: nowrap;
+        height: 52px;
+        margin: 0 0 5px
+    }
+
+    .pc-kbd-ct>.pc-kbd-row>div {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 0 5px 0 0;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .302);
+        border-radius: 4px;
+        line-height: 1;
+        vertical-align: top
+    }
+
+    .pc-kbd-ct>.pc-kbd-row>div.disable {
+        background: #7d97ad;
+        border: 1px solid rgba(0, 0, 0, .2)
+    }
+
+    .pc-kbd-ct>.pc-kbd-row>div.d {
+        background-color: rgba(199, 39, 76, .502)
+    }
+
+    .pc-kbd-ct>.pc-kbd-row>div.selec {
+        -webkit-animation: shanshan 1s infinite;
+        animation: shanshan 1s infinite
+    }
+
+    .pc-kbd-ct>.pc-kbd-row>div>.key-name {
+        padding: 5px 8px 0;
+        pointer-events: none
+    }
+
+    .pc-kbd-ct>.pc-kbd-row>div>.key-rep {
+        font-size: 12px;
+        padding: 6px 0 0;
+        color: rgba(16, 10, 255, .8);
+        font-weight: 700;
+        text-align: center;
+        pointer-events: none
+    }
+
+    .pc-kbd-set {
+        width: 1272px;
+        margin: 0 auto;
+        padding: 0 0 50px
+    }
+
+    .pc-kbd-set>.row-title {
+        margin: 0 10px .5em;
+        font-size: 16px;
+        font-weight: 700
+    }
+
+    .pc-kbd-set>.row {
+        margin: 0 10px
+    }
+
+    .pc-kbd-set>.row.faq-item {
+        margin: 0 10px 1em
+    }
+
+    .pc-kbd-set .xw-button {
+        font-size: 14px;
+        margin: 0 .25em
+    }
+
+    .pc-kbd-set .select-key {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 0 5px 0 0;
+        background: rgba(0, 0, 0, .733);
+        border: 1px solid rgba(0, 0, 0, .302);
+        border-radius: 4px;
+        line-height: 1;
+        vertical-align: top
+    }
+
+    .pc-kbd-set .select-key>.key-name {
+        padding: 5px 8px 0;
+        pointer-events: none;
+        font-weight: 700;
+        color: #fff
+    }
+
+    .pc-kbd-set .edit-container {
+        margin: 5px 0 0;
+        border: 1px solid rgba(0, 0, 0, .2);
+        padding: 3px 16px 20px;
+        background: #fff
+    }
+
+    .pc-kbd-set .edit-container>.btn-group {
+        margin: 10px 0 0
+    }
+
+    @-webkit-keyframes shanshan {
+        0% {
+            border: 1px solid rgba(16, 10, 255, .8);
+            color: rgba(16, 10, 255, .8);
+            background-color: rgba(16, 10, 255, .2)
+        }
+
+        49% {
+            border: 1px solid rgba(16, 10, 255, .8);
+            color: rgba(16, 10, 255, .8);
+            background-color: rgba(16, 10, 255, .2)
+        }
+
+        50% {
+            border: 1px solid rgba(0, 0, 0, .302);
+            color: #000
+        }
+
+        to {
+            border: 1px solid rgba(0, 0, 0, .302);
+            color: #000
+        }
+    }
+
+    @keyframes shanshan {
+        0% {
+            border: 1px solid rgba(16, 10, 255, .8);
+            color: rgba(16, 10, 255, .8);
+            background-color: rgba(16, 10, 255, .2)
+        }
+
+        49% {
+            border: 1px solid rgba(16, 10, 255, .8);
+            color: rgba(16, 10, 255, .8);
+            background-color: rgba(16, 10, 255, .2)
+        }
+
+        50% {
+            border: 1px solid rgba(0, 0, 0, .302);
+            color: #000
+        }
+
+        to {
+            border: 1px solid rgba(0, 0, 0, .302);
+            color: #000
+        }
+    }
+
+    body {
+        margin: 0;
+        font-family: Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, .65);
+        background-color: #fff
+    }
+
+    ::-moz-selection {
+        color: #fff;
+        background-color: rgba(39, 168, 255, .75)
+    }
+
+    ::selection {
+        color: #fff;
+        background-color: rgba(39, 168, 255, .75)
+    }
+
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit
+    }
+
+    button,
+    input,
+    textarea {
+        font-family: Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+        color: inherit
+    }
+
+    .page-container {
+        min-height: 600px;
+        margin: 0 20px
+    }
+
+    .content-container {
+        max-width: 1000px
+    }
+</style>
+
+</html>
