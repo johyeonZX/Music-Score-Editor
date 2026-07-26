@@ -5,4 +5,5 @@ Music-Score-Editor 是一款基于 WPS OFFICE WORD 开发的一款乐谱编辑�
 
 技术栈：原始 Javascript + jq、Vue、Cli、vba 等 共同实现 
 
-<img width="1759" height="1258" alt="image" src="https://github.com/user-attachments/assets/340fd27a-108d-46e7-8fe5-765b9f60bd99" />
+<br>
+<img width="500" align="center" alt="image" src="https://github.com/user-attachments/assets/340fd27a-108d-46e7-8fe5-765b9f60bd99" />
