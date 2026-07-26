@@ -1,5 +1,5 @@
 
-##2021 Annual Innovation and Technology Contest Winner: Music-Score-Editor <br>
+## 2021 Annual Innovation and Technology Contest Winner: Music-Score-Editor <br>
 2021年度 信创大比武作获奖作品  Music-Score-Editor
 
 - Music-Score-Editor is a music score editing plugin developed based on WPS OFFICE WORD, which is released and installed in an offline mode package, supporting normal operation without server access. <br>
